@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Login</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sky"></div>
+<div class="sun"></div>
+<div class="hills"></div>
+<div class="roses" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="petals" id="petals" aria-hidden="true"></div>
+
+<main class="stage">
+  <header class="greeting">
+    <svg class="balloon left" viewBox="0 0 120 180" aria-hidden="true">
+      <path d="M60 55C20 20 -5 -5 25 -5C45 -5 58 10 60 22C62 10 75 -5 95 -5C125 -5 100 20 60 55Z" transform="translate(0 20)"/>
+      <path d="M60 80C40 110 90 130 55 175"/>
+    </svg>
+    <h1 class="hi">Welcome! <span class="beat"></span></h1>
+    <svg class="balloon right" viewBox="0 0 120 180" aria-hidden="true">
+      <path d="M60 55C20 20 -5 -5 25 -5C45 -5 58 10 60 22C62 10 75 -5 95 -5C125 -5 100 20 60 55Z" transform="translate(0 20)"/>
+      <path d="M60 80C80 110 30 130 65 175"/>
+    </svg>
+  </header>
+
+  <section class="card" id="card">
+    <span class="spark s1">✦</span>
+    <span class="spark s2">✦</span>
+    <span class="spark s3">✧</span>
+    <h2 class="title">Login</h2>
+    <form id="loginForm" novalidate autocomplete="off">
+      <label class="field">
+        <span class="label">Enter User</span>
+        <input type="text" id="username" name="username" placeholder="Username" autocomplete="off" required>
+      </label>
+      <label class="field">
+        <span class="label">Password</span>
+        <div class="pass">
+          <input type="password" id="password" name="password" placeholder="Password" autocomplete="off" required>
+          <button type="button" id="toggle" aria-label="Show password">👁</button>
+        </div>
+      </label>
+      <p class="msg" id="msg" role="alert" aria-live="polite"></p>
+      <button type="submit" class="btn"><span class="heart">♥</span>Login<span class="heart">♥</span></button>
+    </form>
+  </section>
+
+  <div class="note" aria-hidden="true">You are special ♥</div>
+</main>
+
+<div class="burst" id="burst" aria-hidden="true"></div>
+
+<section class="themes" id="themes" hidden>
+  <h2 class="themes-title">Choose a Theme</h2>
+
+  <button type="button" class="theme halloween" data-theme="Halloween">
+    <span class="deco moon">🌕</span>
+    <span class="deco d1">👻</span>
+    <span class="deco d2">🎃</span>
+    <span class="deco d3">🦇</span>
+    <span class="deco d4">👻</span>
+    <span class="deco d5">🎃</span>
+    <span class="deco d6">🕸️</span>
+    <span class="theme-name">Halloween</span>
+  </button>
+
+  <button type="button" class="theme christmas" data-theme="Christmas">
+    <span class="deco d1">🎄</span>
+    <span class="deco d2">🎁</span>
+    <span class="deco d3">⛄</span>
+    <span class="deco d4">🎄</span>
+    <span class="deco d5">🔔</span>
+    <span class="deco d6">⭐</span>
+    <span class="snow s1">❄</span>
+    <span class="snow s2">❄</span>
+    <span class="snow s3">❅</span>
+    <span class="snow s4">❆</span>
+    <span class="theme-name">Christmas</span>
+  </button>
+
+  <button type="button" class="album-btn" id="albumOpen"><span>📸</span>View Album</button>
+
+  <button type="button" id="back" class="btn small">Log out</button>
+</section>
+
+<div class="scene halloween-scene" id="sceneHalloween" aria-hidden="true">
+  <span class="moon-big"></span>
+  <span class="fly bat b1">🦇</span>
+  <span class="fly bat b2">🦇</span>
+  <span class="fly bat b3">🦇</span>
+  <span class="fly ghost g1">👻</span>
+  <span class="fly ghost g2">👻</span>
+  <span class="fly ghost g3">👻</span>
+  <div class="ground">
+    <span>🪦</span><span>🎃</span><span>🌳</span><span>🎃</span><span>🪦</span><span>🎃</span>
+  </div>
+</div>
+
+<div class="scene christmas-scene" id="sceneChristmas" aria-hidden="true">
+  <span class="star t1">✦</span><span class="star t2">✧</span><span class="star t3">✦</span><span class="star t4">✧</span>
+  <div class="snowfield" id="snowfield"></div>
+  <div class="ground">
+    <span>🎄</span><span>⛄</span><span>🎄</span><span>🎁</span><span>🎄</span><span>🦌</span>
+  </div>
+</div>
+
+<section class="plan" id="plan" hidden>
+  <h2 class="plan-title" id="planTitle"></h2>
+  <article class="paper" id="paper"><div class="paper-body" id="paperBody"></div></article>
+  <button type="button" id="planBack" class="btn small">Back</button>
+</section>
+
+<section class="album" id="album" hidden>
+  <div class="progress"><span id="progressBar"></span></div>
+  <button type="button" class="album-close" id="albumClose" aria-label="Close album">✕</button>
+  <h2 class="album-title">Our Album</h2>
+  <div class="album-stage" id="albumStage"></div>
+  <p class="album-count" id="albumCount"></p>
+  <div class="album-controls">
+    <button type="button" id="prevBtn" aria-label="Previous">◀</button>
+    <button type="button" id="playBtn" aria-label="Pause">❚❚</button>
+    <button type="button" id="nextBtn" aria-label="Next">▶</button>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
