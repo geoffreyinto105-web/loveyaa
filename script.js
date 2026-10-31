@@ -8,7 +8,7 @@
       title: 'Plan This Halloween',
       lines: [
         ['item', 'Manood ng KMJS Gabi Ng Lagim'],
-        ['item', 'Panoorin Ang Sam & Colby Hell Week']
+        ['item', 'Manood ng Horror Movies']
       ]
     },
     Christmas: {
